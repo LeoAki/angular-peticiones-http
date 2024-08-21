@@ -1,0 +1,13 @@
+<p>Listado de productos</p>
+
+@if (products$ | async; as producto) {
+
+  @for (item of producto.products; track $index) {
+    <app-item-product [productInfo]="item"></app-item-product>
+  }
+
+}
+
+@if (errorMessage) {
+  <app-error-message [mensajeError]="errorMessage"></app-error-message>
+}
